@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.uzju.dongtai_sql_inject_lab.mapper.UserMapper">
+
+    <!--返回所有用户信息-->
+    <select id="getAllUserInfo" resultType="com.uzju.dongtai_sql_inject_lab.entity.User">
+        select * from user order by #{getparse}
+    </select>
+
+    <!--and注入-->
+    <select id="getUserInfo_inject" resultType="com.uzju.dongtai_sql_inject_lab.entity.User">
+        select * from user where id = ${id}
+    </select>
+
+    <!--order by 注入-->
+    <select id="getUserInfo_Orderby_Inject" resultType="com.uzju.dongtai_sql_inject_lab.entity.User">
+        select * from user where id = #{id} order by ${getparse}
+    </select>
+
+    <!--like注入-->
+    <select id="getUserInfo_like_Inject" resultType="com.uzju.dongtai_sql_inject_lab.entity.User">
+        select * from user where id = #{id} and userName like '${username}'
+    </select>
+
+    <!--in注入-->
+    <select id="getUserInfo_in_Inject" resultType="com.uzju.dongtai_sql_inject_lab.entity.User">
+        select * from user where id in (${data})
+    </select>
+</mapper>

@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.uzju.dongtai_sql_inject_lab.DongtaiSqlInjectLabApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.896 s - in com.uzju.dongtai_sql_inject_lab.DongtaiSqlInjectLabApplicationTests
